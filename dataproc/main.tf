@@ -43,7 +43,7 @@ resource "google_dataproc_cluster" "tstdataprocclus" {
 
     # Override or set some custom properties
     software_config {
-      image_version = "1.5.55-ubuntu18"
+      image_version = "1.4.21-debian9"
 
       override_properties = {
         "dataproc:dataproc.allow.zero.workers"        = "true"
@@ -59,25 +59,6 @@ resource "google_dataproc_cluster" "tstdataprocclus" {
     # You can define multiple initialization_action blocks
     initialization_action {
       script      = "gs://dataproc-initialization-actions/stackdriver/stackdriver.sh"
-      timeout_sec = 500
-    }
-
-    }
-    initialization_action {
-      script      = "gs://goog-dataproc-initialization-actions/cloud-sql-proxy/cloud-sql-proxy.sh"
-      timeout_sec = 500
-    }
-
-    }
-    initialization_action {
-      script      = "gs://goog-dataproc-initialization-actions/conda/bootstrap-conda.sh"
-      timeout_sec = 500
-    }
-
-    
-    }
-    initialization_action {
-      script      = "gs://goog-dataproc-initialization-actions/python/pip-install.sh"
       timeout_sec = 500
     }
 
