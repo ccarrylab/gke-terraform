@@ -76,7 +76,7 @@ resource "google_dataproc_cluster" "tstdataprocclus" {
       timeout_sec = 500
     }
     initialization_action {
-      script      = "gs://dataproc-initialization-actions/kafka/kafka.sh"
+      script      = "gs://goog-dataproc-initialization-actions-/python/pip-install.sh"
       timeout_sec = 500
     }
     autoscaling_config {
