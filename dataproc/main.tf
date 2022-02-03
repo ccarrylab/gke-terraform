@@ -75,10 +75,17 @@ resource "google_dataproc_cluster" "tstdataprocclus" {
       script      = "gs://dataproc-initialization-actions/livy/livy.sh"
       timeout_sec = 500
     }
+
+    }
+    initialization_action {
+      script      = "gs://goog-dataproc-initialization-actions-/python/pip-install.sh"
+      timeout_sec = 500
+    }
     initialization_action {
       script      = "gs://dataproc-initialization-actions/kafka/kafka.sh"
       timeout_sec = 500
     }
+    
     autoscaling_config {
       policy_uri = google_dataproc_autoscaling_policy.asp.name
     }
