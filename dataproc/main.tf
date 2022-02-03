@@ -43,7 +43,7 @@ resource "google_dataproc_cluster" "tstdataprocclus" {
 
     # Override or set some custom properties
     software_config {
-      image_version = "1.5.55-ubuntu18"
+      image_version = "1.4.21-debian9"
 
       override_properties = {
         "dataproc:dataproc.allow.zero.workers"        = "true"
@@ -76,7 +76,7 @@ resource "google_dataproc_cluster" "tstdataprocclus" {
       timeout_sec = 500
     }
     initialization_action {
-      script      = "gs://goog-dataproc-initialization-actions-/python/pip-install.sh"
+      script      = "gs://dataproc-initialization-actions/kafka/kafka.sh"
       timeout_sec = 500
     }
     autoscaling_config {
