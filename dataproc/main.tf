@@ -74,6 +74,7 @@ resource "google_dataproc_cluster" "tstdataprocclus" {
       timeout_sec = 500
     }
 
+    
     }
     initialization_action {
       script      = "gs://goog-dataproc-initialization-actions/python/pip-install.sh"
