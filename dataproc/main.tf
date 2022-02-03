@@ -43,7 +43,7 @@ resource "google_dataproc_cluster" "tstdataprocclus" {
 
     # Override or set some custom properties
     software_config {
-      image_version = "1.4.21-debian9"
+      image_version = "1.5.55-ubuntu18"
 
       override_properties = {
         "dataproc:dataproc.allow.zero.workers"        = "true"
